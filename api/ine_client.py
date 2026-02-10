@@ -41,6 +41,7 @@ class INEClient:
             return []
 
     STATIC_MUNICIPALITIES = [
+        {"Id": "46078", "Nombre": "Burjassot", "Slug": "burjassot"}, # Added as priority
         {"Id": "28079", "Nombre": "Madrid", "Slug": "madrid"},
         {"Id": "08019", "Nombre": "Barcelona", "Slug": "barcelona"},
         {"Id": "46250", "Nombre": "Valencia", "Slug": "valencia"},
