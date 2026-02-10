@@ -121,6 +121,11 @@ export default function DemographicReport({ data, loading, error }: DemographicR
                                 <YAxis dataKey="name" type="category" width={100} />
                                 <Tooltip formatter={(value: number | undefined) => value ? value.toLocaleString() : '0'} />
                                 <Legend />
+                                <Bar dataKey="value" fill="#8884d8" radius={[0, 4, 4, 0]}>
+                                    {data.nationalityBreakdown.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                    ))}
+                                </Bar>
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
