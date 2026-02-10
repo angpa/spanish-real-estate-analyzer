@@ -100,7 +100,7 @@ export default function DemographicReport({ data, loading, error }: DemographicR
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
-                                <Tooltip formatter={(value: number) => value.toLocaleString()} />
+                                <Tooltip formatter={(value: number | undefined) => value ? value.toLocaleString() : '0'} />
                                 <Legend />
                             </PieChart>
                         </ResponsiveContainer>
@@ -119,7 +119,7 @@ export default function DemographicReport({ data, loading, error }: DemographicR
                                 <CartesianGrid strokeDasharray="3 3" horizontal={false} />
                                 <XAxis type="number" />
                                 <YAxis dataKey="name" type="category" width={100} />
-                                <Tooltip formatter={(value: number) => value.toLocaleString()} />
+                                <Tooltip formatter={(value: number | undefined) => value ? value.toLocaleString() : '0'} />
                                 <Bar dataKey="value" fill="#8884d8" radius={[0, 4, 4, 0]}>
                                     {data.nationalityBreakdown.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
